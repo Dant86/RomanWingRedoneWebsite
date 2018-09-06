@@ -1,0 +1,19 @@
+{
+  "name": "roman_wing_server",
+  "version": "1.0.0",
+  "description": "roman wing website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dant86/RomanWingRedoneWebsite.git"
+  },
+  "author": "InTheLab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dant86/RomanWingRedoneWebsite/issues"
+  },
+  "homepage": "https://github.com/Dant86/RomanWingRedoneWebsite#readme"
+}
