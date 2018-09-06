@@ -3,7 +3,7 @@
 
 ## Settings
 
-__NodeJS version__: 8.11.13
+__NodeJS version__: 8.11.3
 
 __NPM version__: 5.6.0
 
