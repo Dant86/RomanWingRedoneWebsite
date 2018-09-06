@@ -11,4 +11,6 @@ __NPM version__: 5.6.0
 ## Build instructions
 
 Follow the build instructions in the backend repository, then proceed to copy
-the generated `libbackend.*` file(s) into the `Backend` folder
+the generated `libbackend.*` file(s) into the `Backend` folder.
+
+Run `npm install` to install the required dependencies.
