@@ -17,6 +17,10 @@ users.get("/:id", function(req, res) {
     }
 });
 
+users.get("/create", function(req, res) {
+    res.render("Users/create")
+}); 
+
 users.post('/', function(req, res) {
    fname = req.body.fname;
    lname = req.body.lname;
