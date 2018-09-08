@@ -1,13 +1,17 @@
-const userRouter = require("./Routes/userRoutes.js")
-const express = require("express")
-const hbs = require("express-handlebars")
+const express = require("express");
+const bodyParser = require("body-parser");
+const hbs = require("express-handlebars");
+const userRouter = require("./Routes/userRoutes.js");
+
 const app = express();
 
 app.engine("hbs", hbs({extname: "hbs", defaultLayout: "layout",
                        layoutsDir: "./Views/Layouts"}));
+
 app.set("views", "./Views")
 app.set("view engine", "hbs");
 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/users", userRouter);
 
 app.get("/", function(req,res){
