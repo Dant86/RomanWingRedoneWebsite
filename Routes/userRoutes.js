@@ -17,4 +17,13 @@ users.get("/:id", function(req, res) {
     }
 });
 
+users.post('/', function(req, res) {
+   fname = req.body.fname;
+   lname = req.body.lname;
+   email = req.body.email;
+   pword = req.body.pword;
+   id = backend.CreateUser(fname, lname, email, pword);
+   res.redirect("/users/" + id)
+});
+
 module.exports = users;
