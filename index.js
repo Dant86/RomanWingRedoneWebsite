@@ -10,6 +10,10 @@ app.set("view engine", "hbs");
 
 app.use("/users", userRouter);
 
+app.get("/", function(req,res){
+	res.render('index')
+});
+
 process.on('SIGINT', function() {
   console.log( "\nGracefully shutting down from SIGINT (Ctrl-C)" );
   process.exit(1);

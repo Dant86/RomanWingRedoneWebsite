@@ -4,6 +4,7 @@ const backend = utils.loadBackend();
 
 users.get("/:id", function(req, res) {
     var id = req.params.id;
+    console.log(id)
     var result = JSON.parse(backend.GetUser(id));
     console.log(result)
     if(utils.isError(result)) {
