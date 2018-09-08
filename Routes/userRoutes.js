@@ -2,6 +2,15 @@ const users = require('express').Router();
 const utils = require("../Utils/utils.js");
 const backend = utils.loadBackend();
 
+users.post('/', function(req, res) {
+   fname = req.body.fname;
+   lname = req.body.lname;
+   email = req.body.email;
+   pword = req.body.pword;
+   id = backend.CreateUser(fname, lname, email, pword);
+   res.redirect("/users/" + id)
+});
+
 users.get("/create", function(req, res) {
     res.render("Users/create")
 }); 
@@ -19,15 +28,6 @@ users.get("/:id", function(req, res) {
         console.log(posts)
         res.render("Users/userPage", {user: result, posts: posts});
     }
-});
-
-users.post('/', function(req, res) {
-   fname = req.body.fname;
-   lname = req.body.lname;
-   email = req.body.email;
-   pword = req.body.pword;
-   id = backend.CreateUser(fname, lname, email, pword);
-   res.redirect("/users/" + id)
 });
 
 module.exports = users;
