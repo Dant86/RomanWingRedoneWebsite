@@ -1,0 +1,120 @@
+@font-face {
+  font-family: "Graphik";
+  src: url("../../Assets/Fonts/Graphik-400-Regular.otf");
+}
+
+body {
+  font-family: "Graphik", sans-serif;
+}
+
+.navbar-brand {
+  padding: 0px 15px 0px 0px;
+}
+
+.nav-item {
+  padding: 0px 15px;
+}
+
+.nav-item:last-of-type {
+  padding: 0px 0px 0px 15px;
+}
+
+#jumbotron-main {
+  background: -moz-linear-gradient(0% 50% 0deg, rgba(27, 20, 100, 1) 0%, rgba(21, 39, 118, 1) 25.41%, rgba(7, 89, 165, 1) 76.78%, rgba(0, 113, 188, 1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(27, 20, 100, 1) 0%, rgba(21, 39, 118, 1) 25.41%, rgba(7, 89, 165, 1) 76.78%, rgba(0, 113, 188, 1) 100%);
+  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0, rgba(27, 20, 100, 1)), color-stop(0.2541, rgba(21, 39, 118, 1)), color-stop(0.7678, rgba(7, 89, 165, 1)), color-stop(1, rgba(0, 113, 188, 1)));
+  background: -o-linear-gradient(0deg, rgba(27, 20, 100, 1) 0%, rgba(21, 39, 118, 1) 25.41%, rgba(7, 89, 165, 1) 76.78%, rgba(0, 113, 188, 1) 100%);
+  background: -ms-linear-gradient(0deg, rgba(27, 20, 100, 1) 0%, rgba(21, 39, 118, 1) 25.41%, rgba(7, 89, 165, 1) 76.78%, rgba(0, 113, 188, 1) 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#1B1464', endColorstr='#0071BC' ,GradientType=0)";
+  background: linear-gradient(90deg, rgba(27, 20, 100, 1) 0%, rgba(21, 39, 118, 1) 25.41%, rgba(7, 89, 165, 1) 76.78%, rgba(0, 113, 188, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1B1464', endColorstr='#0071BC', GradientType=1);
+  margin-top: 70px;
+  /*  margin-top: 5%;*/
+  height: 500px;
+  padding-top: 140px;
+  border-radius: 0px;
+}
+
+.lead {
+  font-size: 32px;
+  ;
+  font-weight: 350;
+  color: white;
+  margin-top: 30px;
+}
+
+#jumbotron-btn {
+  background-image: radial-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))
+}
+
+#home-pill-tabs {
+  margin-bottom: 40px;
+}
+
+.nav-pills .nav-item {
+  margin: 0;
+  padding: 2px;
+}
+
+.nav-pills .nav-item a {
+  color: rgba(7, 89, 165, 1);
+}
+
+.nav-pills .nav-item a:hover {
+  color: darkblue;
+}
+
+.nav-pills .nav-item .active {
+  background-color: rgba(7, 89, 165, 1);
+}
+
+.nav-pills .nav-item .active:hover {
+  background-color: rgba(7, 89, 165, 1);
+  color: white;
+}
+
+footer {
+  margin-top: 50px;
+}
+
+#recent-articles button {
+  margin-top: 10px;
+}
+
+/* Responsive */
+
+@media (max-width: 576px) {
+  .lead {
+    font-size: 12px;;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .card-columns {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+
+  .lead {
+    font-size: 18px;;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .lead {
+    font-size: 24px;;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .lead {
+    font-size: 32px;;
+  }
+}
+
+@media (min-width: 1200px){
+  .lead {
+    font-size: 40px;;
+  }
+}
