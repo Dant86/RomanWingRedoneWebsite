@@ -18,7 +18,6 @@ users.get("/create", function(req, res) {
 });
 
 users.get("/:id", function(req, res) {
-    console.log("what the fuck");
     var id = req.params.id;
     var result = JSON.parse(backend.GetUser(id));
     if(utils.isError(result)) {

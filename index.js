@@ -2,7 +2,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const hbs = require("express-handlebars");
 const userRouter = require("./Routes/userRoutes.js");
-const session = require('express-session')
+const session = require('express-session');
+const utils = require("./Utils/utils.js");
+const backend = utils.loadBackend();
 
 const app = express();
 
@@ -24,9 +26,11 @@ app.use("/users", userRouter);
 
 app.get("/", function(req,res) {
     var err = req.session.error;
-    console.log(err);
     req.session.error = null;
-	return res.render('index', {err: err});
+    var articles = JSON.parse(backend.Get12MostRecentArticles());
+    var events = JSON.parse(backend.GetFutureEvents());
+    console.log(articles)
+	return res.render('index', {err: err, articles: articles, events: events});
 });
 
 process.on('SIGINT', function() {

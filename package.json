@@ -4,7 +4,13 @@
   "description": "roman wing website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed-users": "node seed.js users",
+    "seed-articles": "node seed.js articles",
+    "seed-events": "node seed.js events",
+    "seed-all": "node seed.js all",
+    "migrate": "node seed.js migrate",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

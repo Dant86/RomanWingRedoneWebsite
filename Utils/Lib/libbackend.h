@@ -87,7 +87,7 @@ extern char* GetArticlesFromUser(GoInt p0);
 
 extern char* GetApprovedArticles();
 
-extern char* Get10MostRecentArticles();
+extern char* Get12MostRecentArticles();
 
 extern char* GetArticleAuthor(GoInt p0);
 
@@ -100,6 +100,8 @@ extern char* CreateEvent(char* p0, char* p1, char* p2, char* p3);
 extern char* GetEvent(GoInt p0);
 
 extern char* GetFutureEvents();
+
+extern void Migrate();
 
 #ifdef __cplusplus
 }

@@ -13,12 +13,14 @@ exports.loadBackend = function() {
         ApproveArticle: ["string", ["int"]],
         GetArticlesFromUser: ["string", ["int"]],
         GetApprovedArticles: ["string", []],
+        Get12MostRecentArticles: ["string", []],
         GetArticleAuthor: ["string", ["int"]],
         SaveArticle: ["string", ["int", "int"]],
         GetSavedArticles: ["string", ["int"]],
         CreateEvent: ["string", ["string", "string", "string", "string"]],
         GetEvent: ["string", ["int"]],
-        GetFutureEvents: ["string", []]
+        GetFutureEvents: ["string", []],
+        Migrate: ["void", []]
     });
     return backend;
 }

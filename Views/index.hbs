@@ -1,54 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Roman Wing</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:300" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="Static/CSS/index.css">
-</head>
+<link rel="stylesheet" type="text/css" href="Static/CSS/index.css">
 
 <body>
-    {{#if err}}
-        <h1>{{err}}</h1>
-    {{/if}}
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <div class="container d-flex justify-content-between">
-            <a class="navbar-brand" href="#">
-        <img src="Assets/Images/Blue Icon.svg" width="45" height="40" alt="">
-      </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="nav navbar-nav navbar-right ml-auto mt-2 my-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/articles">Articles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/events">Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/submit">Write</a>
-                    </li>
-                    <li class="nav-item">
-                        {{#if user}}
-                            <a class="nav-link" href="/users/{{user.id}}">My Account</a>
-                        {{else}}
-                            <a class="nav-link" href="users/login">Log in</a>
-                        {{/if}}
-                    </li>
-                </ul>
+    <div class="nav-wrapper">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container d-flex justify-content-between">
+                <a class="navbar-brand" href="#">
+                    <img src="Assets/Images/Blue Icon.svg" width="45" height="40" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="nav navbar-nav navbar-right ml-auto mt-2 my-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/articles">Articles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/events">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/submit">Write</a>
+                        </li>
+                        <li class="nav-item">
+                            {{#if user}}
+                                <a class="nav-link" href="/users/{{user.id}}">My Account</a>
+                            {{else}}
+                                <a class="nav-link" href="users/login">Log in</a>
+                            {{/if}}
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </nav>
+    </div>
+
+    {{#if err}}
+        <div class="error">
+            <h1 class="alert alert-danger error">{{err}}</h1>
         </div>
-    </nav>
+    {{/if}}
 
     <div class="jumbotron text-center" id="jumbotron-main">
         <div class="container">
@@ -71,102 +68,16 @@
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
             <div class="container" id="recent-articles">
                 <div class="card-columns">
-                    <div class="card">
-                        <img class="card-img-top" src="https://assets.merriam-webster.com/mw/images/source-original/2016-12-02_15-51-48---563f3796391c5dda2e1dfc0083c36d51.jpg" alt="Card image cap">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    {{#each articles}}
+                        <div class="card">
+                            <img class="card-img-top" src="{{this.ThumbnailUrl}}" alt="Card image cap">
+                            <div class="card-body bg-light">
+                                <h5 class="card-title">{{this.Title}}</h5>
+                                <p class="card-text">{{this.Description}}</p>
+                                <p class="card-text"><small class="text-muted">Created on {{this.DateCreated}}</small></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="http://www.pawderosa.com/images/puppies.jpg" alt="Card image caa">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="https://i.ytimg.com/vi/mRf3-JkwqfU/hqdefault.jpg" alt="Card image cab">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="https://static.scientificamerican.com/sciam/cache/file/D059BC4A-CCF3-4495-849ABBAFAED10456.jpg?w=590&h=393&526ED1E1-34FF-4472-B348B8B4769AB2A1" alt="Card image cad">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="https://cdn2-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-2.jpg" alt="Card image cac">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA4OC85MTEvb3JpZ2luYWwvZ29sZGVuLXJldHJpZXZlci1wdXBweS5qcGVn" alt="Card image cae">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="https://cdn-img.health.com/sites/default/files/styles/large_16_9/public/styles/main/public/gettyimages-522881398.jpg?itok=0g33xDwx" alt="Card image caf">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="https://www.popsci.com/sites/popsci.com/files/styles/1000_1x_/public/images/2017/10/terrier-puppy.jpg?itok=rIgh3ArV&fc=50,50" alt="Card image cag">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="https://gfnc1kn6pi-flywheel.netdna-ssl.com/wp-content/uploads/2017/08/boy-dog-names.jpg" alt="Card image cah">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnoEbyygFljC2Pt7aWBqo3aJmdpnhPskpcNjazzQMqU9ZvEu4JjQ" alt="Card image cai">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="https://media.phillyvoice.com/media/images/Golden_Retriever_Puppy.2e16d0ba.fill-735x490.png" alt="Card image cai">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="https://assets3.thrillist.com/v1/image/2502455/size/tmg-article_tall.jpg" alt="Card image cak">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
+                    {{/each}}
                 </div>
                 <div class="container-fluid text-center">
                     <button type="button" class="btn btn-light">View More</button>
@@ -176,102 +87,16 @@
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
             <div class="container" id="upcoming-events">
                 <div class="card-columns">
-                    <div class="card">
-                        <img class="card-img-top" src="https://assets.merriam-webster.com/mw/images/source-original/2016-12-02_15-51-48---563f3796391c5dda2e1dfc0083c36d51.jpg" alt="Card image cap">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    {{#each events}}
+                        <div class="card">
+                            <img class="card-img-top" src="https://assets.merriam-webster.com/mw/images/source-original/2016-12-02_15-51-48---563f3796391c5dda2e1dfc0083c36d51.jpg" alt="Card image cap">
+                            <div class="card-body bg-light">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="http://www.pawderosa.com/images/puppies.jpg" alt="Card image caa">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="https://i.ytimg.com/vi/mRf3-JkwqfU/hqdefault.jpg" alt="Card image cab">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="https://static.scientificamerican.com/sciam/cache/file/D059BC4A-CCF3-4495-849ABBAFAED10456.jpg?w=590&h=393&526ED1E1-34FF-4472-B348B8B4769AB2A1" alt="Card image cad">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="https://cdn2-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-2.jpg" alt="Card image cac">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA4OC85MTEvb3JpZ2luYWwvZ29sZGVuLXJldHJpZXZlci1wdXBweS5qcGVn" alt="Card image cae">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="https://cdn-img.health.com/sites/default/files/styles/large_16_9/public/styles/main/public/gettyimages-522881398.jpg?itok=0g33xDwx" alt="Card image caf">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="https://www.popsci.com/sites/popsci.com/files/styles/1000_1x_/public/images/2017/10/terrier-puppy.jpg?itok=rIgh3ArV&fc=50,50" alt="Card image cag">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="https://gfnc1kn6pi-flywheel.netdna-ssl.com/wp-content/uploads/2017/08/boy-dog-names.jpg" alt="Card image cah">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnoEbyygFljC2Pt7aWBqo3aJmdpnhPskpcNjazzQMqU9ZvEu4JjQ" alt="Card image cai">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="https://media.phillyvoice.com/media/images/Golden_Retriever_Puppy.2e16d0ba.fill-735x490.png" alt="Card image cai">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="https://assets3.thrillist.com/v1/image/2502455/size/tmg-article_tall.jpg" alt="Card image cak">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
+                    {{/each}}
                 </div>
                 <div class="container-fluid text-center">
                     <button type="button" class="btn btn-light">View More</button>
@@ -289,51 +114,20 @@
                 </div>
                 <div class="col-6 col-md">
                     <h5>About</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Item 1</a></li>
-                        <li><a class="text-muted" href="#">Item 2</a></li>
-                        <li><a class="text-muted" href="#">Item 3</a></li>
-                        <li><a class="text-muted" href="#">Item 4</a></li>
-                        <li><a class="text-muted" href="#">Item 5</a></li>
-                        <li><a class="text-muted" href="#">Item 6</a></li>
-                    </ul>
                 </div>
                 <div class="col-6 col-md">
                     <h5>Articles</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Item 1</a></li>
-                        <li><a class="text-muted" href="#">Item 2</a></li>
-                        <li><a class="text-muted" href="#">Item 3</a></li>
-                        <li><a class="text-muted" href="#">Item 4</a></li>
-                    </ul>
                 </div>
                 <div class="col-6 col-md">
                     <h5>Events</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Item 1</a></li>
-                        <li><a class="text-muted" href="#">Item 2</a></li>
-                        <li><a class="text-muted" href="#">Item 3</a></li>
-                        <li><a class="text-muted" href="#">Item 4</a></li>
-                    </ul>
                 </div>
                 <div class="col-6 col-md">
                     <h5>My Account</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Item 1</a></li>
-                        <li><a class="text-muted" href="#">Item 2</a></li>
-                        <li><a class="text-muted" href="#">Item 3</a></li>
-                        <li><a class="text-muted" href="#">Item 4</a></li>
-                    </ul>
                 </div>
             </div>
         </div>
     </footer>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-
+    <script src="Static/JS/index.js"></script>
 </body>
 
 </html>

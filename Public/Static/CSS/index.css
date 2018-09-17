@@ -19,6 +19,12 @@ body {
   padding: 0px 0px 0px 15px;
 }
 
+.error {
+    margin-top: 70px;
+    margin-bottom: -55px;
+    text-align: center;
+}
+
 #jumbotron-main {
   background: -moz-linear-gradient(0% 50% 0deg, rgba(27, 20, 100, 1) 0%, rgba(21, 39, 118, 1) 25.41%, rgba(7, 89, 165, 1) 76.78%, rgba(0, 113, 188, 1) 100%);
   background: -webkit-linear-gradient(0deg, rgba(27, 20, 100, 1) 0%, rgba(21, 39, 118, 1) 25.41%, rgba(7, 89, 165, 1) 76.78%, rgba(0, 113, 188, 1) 100%);
@@ -79,6 +85,15 @@ footer {
 
 #recent-articles button {
   margin-top: 10px;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.card:hover::after {
+    transition: box-shadow 0.2s ease-in-out;
 }
 
 /* Responsive */
