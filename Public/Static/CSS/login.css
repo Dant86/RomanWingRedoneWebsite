@@ -1,0 +1,159 @@
+@font-face {
+  font-family: "Graphik";
+  src: url("/Assets/Fonts/Graphik-400-Regular.otf");
+}
+
+body {
+    background: -moz-linear-gradient(0% 50% 0deg, rgba(27, 20, 100, 1) 0%, rgba(21, 39, 118, 1) 25.41%, rgba(7, 89, 165, 1) 76.78%, rgba(0, 113, 188, 1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(27, 20, 100, 1) 0%, rgba(21, 39, 118, 1) 25.41%, rgba(7, 89, 165, 1) 76.78%, rgba(0, 113, 188, 1) 100%);
+    background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0, rgba(27, 20, 100, 1)), color-stop(0.2541, rgba(21, 39, 118, 1)), color-stop(0.7678, rgba(7, 89, 165, 1)), color-stop(1, rgba(0, 113, 188, 1)));
+    background: -o-linear-gradient(0deg, rgba(27, 20, 100, 1) 0%, rgba(21, 39, 118, 1) 25.41%, rgba(7, 89, 165, 1) 76.78%, rgba(0, 113, 188, 1) 100%);
+    background: -ms-linear-gradient(0deg, rgba(27, 20, 100, 1) 0%, rgba(21, 39, 118, 1) 25.41%, rgba(7, 89, 165, 1) 76.78%, rgba(0, 113, 188, 1) 100%);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#1B1464', endColorstr='#0071BC' ,GradientType=0)";
+    background: linear-gradient(90deg, rgba(27, 20, 100, 1) 0%, rgba(21, 39, 118, 1) 25.41%, rgba(7, 89, 165, 1) 76.78%, rgba(0, 113, 188, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1B1464', endColorstr='#0071BC', GradientType=1);
+}
+
+.login-form {
+    margin-top: 70px;
+    margin-bottom: -55px;
+    display: inline-block;
+    text-align: center;
+    height: 600px;
+    width: 800px;
+    border-radius: 20px;
+    background-color: white;
+    align-self: center;
+    justify-self: center;
+    float: center;
+}
+
+.login {
+    margin-top: 125px;
+    display: inline-block;
+    align-self: center;
+    justify-self: center;
+    width: 300px;
+    text-align: center;
+}
+
+.login h1 {
+    font-size: 50px;
+    margin-top: 0;
+}
+
+.input_container {
+    width: 271px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 40px 220px;
+}
+
+.login_icon {
+    width: 20px;
+    background: rgba(3, 91, 170, 1);
+    padding: 11px;
+    border-radius: 5px 0 0 5px;
+}
+
+.login input {
+    display: block;
+    width: 260px;
+    height: 30px;
+    margin: 10px auto;
+    padding: 5px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    font-size: 18px;
+    background: #efefef;
+}
+
+.login .login_input {
+    display: inline-block;
+    width: 220px;
+    height: 30px;
+    margin: 0px auto 10px auto;
+    padding: 5px;
+    border: 1px solid rgba(3, 91, 170, 1);
+    border-radius: 0 5px 5px 0px;
+    border-left: 0;
+    font-size: 18px;
+}
+
+.login input::placeholder {
+    font-size: 18px;
+    margin-left: 5px;
+    color: #333;
+    font-family: "Graphik";
+}
+
+.login .names input {
+    display: inline-block;
+    width: 120px;
+    margin: 0 2px;
+}
+
+.login input:focus {
+    outline: 0;
+    border: 2px solid rgba(3, 91, 170, 1);
+    height: 28px;
+}
+
+.login .login_input:focus {
+    border: 2px solid rgba(3, 91, 170, 1);
+    border-left: 0;
+    height: 28px;
+    width: 219px;
+}
+
+.names input:focus {
+    width: 118px;
+    padding: 5px 6px 5px 4px;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: darkblue;
+}
+
+.login .login_button {
+    display: block;
+    margin: 15px auto 30px auto;
+    height: 60px;
+    width: 280px;
+    background: rgba(3, 91, 170, 1);
+    color: white;
+    font-size: 24px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.login .login_button:hover {
+    background: rgba(26, 23, 90, 1);
+    cursor: pointer;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.login .password_link {
+    display: block;
+    font-size: 13px;
+    color: darkblue;
+    margin: -5px 0px 10px 170px;
+    text-decoration: none;
+}
+
+.login .password_link:hover {
+    text-decoration: underline;
+}
+
+.login .account_link {
+    color: darkblue;
+    text-decoration: none;
+}
+
+
+.login .account_link:hover {
+    text-decoration: underline;
+}
