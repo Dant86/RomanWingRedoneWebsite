@@ -5,42 +5,6 @@
 
 <body>
 
-    <div class="nav-wrapper">
-        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-            <div class="container d-flex justify-content-between">
-                <a class="navbar-brand" href="#">
-                    <img src="Assets/Images/Blue Icon.svg" width="45" height="40" alt="">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="nav navbar-nav navbar-right ml-auto mt-2 my-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/articles">Articles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/events">Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/submit">Write</a>
-                        </li>
-                        <li class="nav-item">
-                            {{#if user}}
-                                <a class="nav-link" href="/users/{{user.id}}">My Account</a>
-                            {{else}}
-                                <a class="nav-link" href="users/login">Log in</a>
-                            {{/if}}
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-
     {{#if err}}
         <div class="error">
             <h1 class="alert alert-danger error">{{err}}</h1>
@@ -69,14 +33,16 @@
             <div class="container" id="recent-articles">
                 <div class="card-columns">
                     {{#each articles}}
-                        <div class="card">
-                            <img class="card-img-top" src="{{this.ThumbnailUrl}}" alt="Card image cap">
-                            <div class="card-body bg-light">
-                                <h5 class="card-title">{{this.Title}}</h5>
-                                <p class="card-text">{{this.Description}}</p>
-                                <p class="card-text"><small class="text-muted">Created on {{this.DateCreated}}</small></p>
+                        <a href="/articles/{{article.id}}">
+                            <div class="card">
+                                <img class="card-img-top" src="{{this.ThumbnailUrl}}" alt="Card image cap">
+                                <div class="card-body bg-light">
+                                    <h5 class="card-title">{{this.Title}}</h5>
+                                    <p class="card-text">{{this.Description}}</p>
+                                    <p class="card-text"><small class="text-muted">Created on {{this.DateCreated}}</small></p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     {{/each}}
                 </div>
                 <div class="container-fluid text-center">
@@ -127,7 +93,7 @@
             </div>
         </div>
     </footer>
-    <script src="Static/JS/index.js"></script>
+
 </body>
 
 </html>

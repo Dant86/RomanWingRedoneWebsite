@@ -7,18 +7,6 @@ body {
   font-family: "Graphik", sans-serif;
 }
 
-.navbar-brand {
-  padding: 0px 15px 0px 0px;
-}
-
-.nav-item {
-  padding: 0px 15px;
-}
-
-.nav-item:last-of-type {
-  padding: 0px 0px 0px 15px;
-}
-
 .error {
     margin-top: 70px;
     margin-bottom: -55px;
@@ -55,28 +43,6 @@ body {
 
 #home-pill-tabs {
   margin-bottom: 40px;
-}
-
-.nav-pills .nav-item {
-  margin: 0;
-  padding: 2px;
-}
-
-.nav-pills .nav-item a {
-  color: rgba(7, 89, 165, 1);
-}
-
-.nav-pills .nav-item a:hover {
-  color: darkblue;
-}
-
-.nav-pills .nav-item .active {
-  background-color: rgba(7, 89, 165, 1);
-}
-
-.nav-pills .nav-item .active:hover {
-  background-color: rgba(7, 89, 165, 1);
-  color: white;
 }
 
 footer {

@@ -5,11 +5,47 @@
         <title>Roman Wing</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="/Static/CSS/navbar.css"
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300" rel="stylesheet">
         <meta charset="utf-8">
     </head>
     <body>
+        <div class="nav-wrapper">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+                <div class="container d-flex justify-content-between">
+                    <a class="navbar-brand" href="/">
+                        <img src="/Assets/Images/Blue Icon.svg" width="45" height="40" alt="">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <ul class="nav navbar-nav navbar-right ml-auto mt-2 my-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/articles">Articles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/events">Events</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/submit">Write</a>
+                            </li>
+                            <li class="nav-item">
+                                {{#if user}}
+                                    <a class="nav-link" href="/users/{{user.id}}">My Account</a>
+                                {{else}}
+                                    <a class="nav-link" href="users/login">Log in</a>
+                                {{/if}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         {{{ body }}}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

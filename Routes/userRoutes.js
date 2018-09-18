@@ -10,11 +10,15 @@ users.post('/', function(req, res) {
    pword = req.body.pword;
    id = JSON.parse(backend.CreateUser(fname, lname, email, pword)).ID;
    req.session.user = id;
-   res.redirect("/users/" + id)
+   res.redirect("/users/" + id);
+});
+
+users.get("/login", function(req, res) {
+    res.render("Users/login");
 });
 
 users.get("/create", function(req, res) {
-    res.render("Users/create")
+    res.render("Users/create");
 });
 
 users.get("/:id", function(req, res) {
