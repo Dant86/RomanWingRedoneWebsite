@@ -33,7 +33,7 @@
             <div class="container" id="recent-articles">
                 <div class="card-columns">
                     {{#each articles}}
-                        <a href="/articles/{{article.id}}">
+                        <a href="/articles/{{this.ID}}">
                             <div class="card">
                                 <img class="card-img-top" src="{{this.ThumbnailUrl}}" alt="Card image cap">
                                 <div class="card-body bg-light">
@@ -57,9 +57,9 @@
                         <div class="card">
                             <img class="card-img-top" src="https://assets.merriam-webster.com/mw/images/source-original/2016-12-02_15-51-48---563f3796391c5dda2e1dfc0083c36d51.jpg" alt="Card image cap">
                             <div class="card-body bg-light">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <h5 class="card-title">{{this.Location}}: {{this.EventName}}</h5>
+                                <p class="card-text">{{this.EventDescription}}</p>
+                                <p class="card-text"><small class="text-muted">{{this.Date}}</small></p>
                             </div>
                         </div>
                     {{/each}}

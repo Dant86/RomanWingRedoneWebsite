@@ -62,6 +62,21 @@ footer {
     transition: box-shadow 0.2s ease-in-out;
 }
 
+.card-body h5 {
+    color: black;
+    text-decoration: none!important;;
+}
+
+.card-body p {
+    color: black;
+    text-decoration: none!important;
+}
+
+.card-body small {
+    color: black;
+    text-decoration: none!important;;
+}
+
 /* Responsive */
 
 @media (max-width: 576px) {
