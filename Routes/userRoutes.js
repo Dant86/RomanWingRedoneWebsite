@@ -17,6 +17,10 @@ users.get("/login", function(req, res) {
     res.render("Users/login");
 });
 
+users.get("/signup", function(req, res) {
+    res.render("Users/signup");
+});
+
 users.get("/create", function(req, res) {
     res.render("Users/create");
 });
